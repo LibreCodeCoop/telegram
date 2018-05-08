@@ -1,0 +1,25 @@
+{
+  "name": "lyseontech/bot",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "William Correa",
+      "email": "wilcorrea@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "irazasyed/telegram-bot-sdk": "^2.0",
+    "monolog/monolog": "^1.23",
+    "php-brasil/telegram": "^0.0.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": [
+      "bootstrap/environment.php"
+    ]
+  }
+}

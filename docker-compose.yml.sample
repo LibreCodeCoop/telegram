@@ -1,0 +1,48 @@
+version: '2'
+
+networks:
+  reverse-proxy:
+    external:
+      name: root_reverse-proxy
+
+volumes:
+  bot.lyseon.tech-mysql_data:
+    driver: local
+
+services:
+  bot.lyseon.tech-mysql:
+    image: mysql:5.6
+    container_name: bot.lyseon.tech-mysql
+    volumes:
+      - bot.lyseon.tech-mysql_data:/var/lib/mysql
+      - .:/var/www/app
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+
+  bot.lyseon.tech-app:
+    build:
+      dockerfile: ./.docker/bot.lyseon.tech-app/Dockerfile
+      context: .
+    container_name: bot.lyseon.tech-app
+    networks:
+      - reverse-proxy
+    volumes:
+      - .:/var/www/app
+    depends_on:
+      - bot.lyseon.tech-mysql
+    links:
+      - bot.lyseon.tech-mysql
+    environment:
+      - VIRTUAL_HOST=bot.lyseon.tech
+      - LETSENCRYPT_EMAIL=wilcorrea@gmail.com
+      - LETSENCRYPT_HOST=bot.lyseon.tech
+      - WEB_DOCUMENT_ROOT="/var/www/app/public"
+      # - PHP_DEBUGGER="xdebug"
+      # export XDEBUG_REMOTE_HOST=$(ifconfig wlan0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+      # - XDEBUG_REMOTE_HOST=${XDEBUG_REMOTE_HOST}
+      # - XDEBUG_REMOTE_AUTOSTART=1
+    # expose:
+      # - 9000

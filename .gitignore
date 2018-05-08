@@ -1,0 +1,8 @@
+/.idea/
+/log
+/storage
+/vendor/
+/.env
+/docker-compose.yml
+*.cache
+!*.gitkeep
