@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ba9ef02c0ff34eaa15dc8b635398220",
+    "content-hash": "a755217de87299cfccd2564d2f3ae9ac",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -545,19 +545,21 @@
         },
         {
             "name": "php-brasil/telegram",
-            "version": "0.0.5",
+            "version": "0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brasil-php/telegram.git",
-                "reference": "66b3f3e059e1e0df316e5926dbb797206bfd3f90"
+                "reference": "7b221b0c59f4acd6aa55cbc8332015470a1062a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brasil-php/telegram/zipball/66b3f3e059e1e0df316e5926dbb797206bfd3f90",
-                "reference": "66b3f3e059e1e0df316e5926dbb797206bfd3f90",
+                "url": "https://api.github.com/repos/brasil-php/telegram/zipball/7b221b0c59f4acd6aa55cbc8332015470a1062a7",
+                "reference": "7b221b0c59f4acd6aa55cbc8332015470a1062a7",
                 "shasum": ""
             },
             "require": {
+                "irazasyed/telegram-bot-sdk": "^2.0",
+                "monolog/monolog": "^1.23",
                 "phpzm/phpee": "^1.0"
             },
             "type": "library",
@@ -576,7 +578,7 @@
                     "email": "wilcorrea@gmail.com"
                 }
             ],
-            "time": "2018-05-08T13:08:03+00:00"
+            "time": "2018-05-08T23:29:06+00:00"
         },
         {
             "name": "phpzm/phpee",

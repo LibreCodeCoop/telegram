@@ -10,9 +10,7 @@
   ],
   "require": {
     "php": ">=7",
-    "irazasyed/telegram-bot-sdk": "^2.0",
-    "monolog/monolog": "^1.23",
-    "php-brasil/telegram": "^0.0.5"
+    "php-brasil/telegram": "^0.0.6"
   },
   "autoload": {
     "psr-4": {
