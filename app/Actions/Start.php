@@ -19,13 +19,17 @@ class Start
      * @throws Exception
      * @SuppressWarnings(Unused)
      */
-    function __invoke($bot, $match, $message)
+    public function __invoke($bot, $match, $message)
     {
-        $chatId = $message['chat']['id'];
+        $chatId = get($message, 'chat.id');
         $parameters = [
             'chat_id' => $chatId,
-            "text" => 'Hello',
-            'reply_markup' => ['keyboard' => [['Hello', 'Hi']], 'one_time_keyboard' => true, 'resize_keyboard' => true]
+            'text' => 'Hello',
+            'reply_markup' => [
+                'keyboard' => [['Hello', 'Hi']],
+                'one_time_keyboard' => true,
+                'resize_keyboard' => true
+            ]
         ];
         $bot->answer($parameters);
     }
