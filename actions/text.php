@@ -28,13 +28,10 @@ return function (Bot $bot) {
     $bot->text('/link(.*?)', LinkList::class);
 
     $bot->text('delete:(?<message>.*)', function ($bot, $match) {
-        /** @var Bot $bot */
         /** @var Match $match */
         $parameters = $match->get('$parameters');
-        $message = '';
-        if (isset($parameters['message'])) {
-            $message = $parameters['message'];
-        }
+        $message = get($parameters, 'message');
+        /** @var Bot $bot */
         $bot->delete();
         return $bot->reply("The message `{$message}` was deleted");
     });

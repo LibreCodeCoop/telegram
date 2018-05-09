@@ -15,13 +15,14 @@ Na tela do chat utilize o comando `/newbot` e informe o id e o nome do seu bot.
 Você pode configurar uma imagem e outros recursos de apresentação também.
 Quando o bot estiver criado você receberá uma mensagem como esta:
 
-> Done! Congratulations on your new bot. You will find it at t.me/<id>.
+> Done! Congratulations on your new bot. You will find it at `https://t.me/<id>`.
 You can now add a description, about section and profile picture for your bot, see /help for a list of commands.
 By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. 
 Just make sure the bot is fully operational before you do this.
 >
 > Use this token to access the HTTP API:
-518711564:AAHdIiBaUaLo3OAi3r8LKpxjqRi-eyKOE7k
+>
+> 518711564:AAHdIiBaUaLo3OAi3r8LKpxjqRi-eyKOE7k
 >
 > For a description of the Bot API, see this page: https://core.telegram.org/bots/api
 
