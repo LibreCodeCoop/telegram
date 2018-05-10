@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use function array_map;
 use Exception;
 use Php\File;
 use Php\JSON;
@@ -30,7 +31,12 @@ class LinkAdd
     public function __invoke($bot, $match)
     {
         $parameters = $match->get('$parameters');
-        $link = Text::replace(Text::trim($parameters['link']), '#', PHP_EOL);
+
+        $pieces = explode('#', get($parameters, 'link'));
+        $link = implode(PHP_EOL, array_map(function ($item) {
+            return Text::trim($item);
+        }, $pieces));
+
         $message = $match->get('$message');
         $chatId = get($message, 'chat.id');
         $filename = APP_ROOT . "/storage/{$chatId}.json";

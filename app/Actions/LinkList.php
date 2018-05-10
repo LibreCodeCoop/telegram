@@ -5,6 +5,7 @@ namespace App\Actions;
 use Exception;
 use Php\File;
 use Php\JSON;
+use const PHP_EOL;
 use PhpBrasil\Telegram\Bot;
 use PhpBrasil\Telegram\Match;
 
@@ -36,7 +37,7 @@ class LinkList
         }
         $items = [];
         foreach ($array as $index => $item) {
-            $items[] = "{$item} # /link_rm_{$index}";
+            $items[] = "{$item}" . PHP_EOL . "Remover: /link_rm_{$index}";
         }
         if (!count($items)) {
             $items = ['empty'];
