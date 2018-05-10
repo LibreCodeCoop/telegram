@@ -43,7 +43,7 @@ class LinkList
             $items = ['empty'];
         }
 
-        $items = implode(PHP_EOL . ' -- ' . PHP_EOL, $items);
+        $text = implode(PHP_EOL . ' -- ' . PHP_EOL, $items);
 
         $options = [
             'disable_web_page_preview' => true,
