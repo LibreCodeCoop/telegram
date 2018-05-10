@@ -42,6 +42,23 @@ class LinkList
         if (!count($items)) {
             $items = ['empty'];
         }
-        return $bot->replyTo(implode(PHP_EOL . ' -- ' . PHP_EOL, $items), ['disable_web_page_preview' => true]);
+
+        $items = implode(PHP_EOL . ' -- ' . PHP_EOL, $items);
+
+        $options = [
+            'disable_web_page_preview' => true,
+            'reply_markup' => [
+                'inline_keyboard' => [
+                    [
+                        [
+                            'text' => 'Remover',
+                            'switch_inline_query' => 'share'
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+        return $bot->replyTo($text, $options);
     }
 }
