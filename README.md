@@ -1,6 +1,6 @@
 <p align="center">
   <img 
-    src="https://github.com/LyseonTech/telegram/raw/master/public/image/telegram.png" 
+    src="https://github.com/librecodecoop/telegram/raw/master/public/image/telegram.png" 
     height="150px" 
     alt="Telegram"
   >
